@@ -1,9 +1,11 @@
 version: "3.7"
 services:
   backend:
-    container_name: wop-backend
-    image: coffeemakingtoaster/wop-backend:latest
+    build: .
     restart: always
+    entrypoint:
+      - /bin/bash
+      - ./start-backend.sh
     ports:
       - "3001:3000"
     links:
@@ -20,9 +22,10 @@ services:
     ports:
       - "27017:27017"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=
-      - MONGO_INITDB_ROOT_PASSWORD=
-      - MONGO_INITDB_DATABASE=
+      - MONGO_INITDB_ROOT_USERNAME=test
+      - MONGO_INITDB_ROOT_PASSWORD=test
+      - MONGO_INITDB_DATABASE=test
+
     logging:
       driver: "none"
 

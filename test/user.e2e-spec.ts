@@ -36,7 +36,7 @@ describe('UserModule (e2e)', () => {
                 UserModule,
                 AuthModule,
                 ConfigModule.forRoot({
-                    envFilePath: ['.env', '.development.env']
+                    envFilePath: ['.env']
                 })
             ],
             providers: [ThirdPartyGuardMock]

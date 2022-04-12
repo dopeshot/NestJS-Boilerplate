@@ -32,7 +32,7 @@ describe('AuthMdoule (e2e)', () => {
                 AuthModule,
                 MailModule,
                 ConfigModule.forRoot({
-                    envFilePath: ['.env', '.development.env']
+                    envFilePath: ['.env']
                 })
             ],
             providers: [ThirdPartyGuardMock]

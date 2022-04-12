@@ -34,7 +34,7 @@ beforeAll(async () => {
             AuthModule,
             MailModule,
             ConfigModule.forRoot({
-                envFilePath: ['.env', '.development.env']
+                envFilePath: ['.env']
             })
         ]
     }).compile();
