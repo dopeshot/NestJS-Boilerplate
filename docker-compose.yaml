@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  backend:
+    container_name: wop-backend
+    image: coffeemakingtoaster/wop-backend:latest
+    restart: always
+    ports:
+      - "3001:3000"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    
+  mongo:
+    image: mongo:5
+    restart: always
+    volumes:
+      - ./home/mongodb:/home/mongodb
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+      - MONGO_INITDB_DATABASE=
+    logging:
+      driver: "none"
+
+  
+             

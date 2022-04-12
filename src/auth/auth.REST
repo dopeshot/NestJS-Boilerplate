@@ -1,0 +1,28 @@
+@adress = http://localhost:3001/api/auth
+### Register User
+POST {{adress}}/register
+Content-Type: application/json
+
+{
+    "username": "Normal User",
+    "email": "normaluser@gmail.de",
+    "password": "adsdfhjngegra"
+}
+
+### Login User
+POST {{adress}}/login
+Content-Type: application/json
+
+{
+    "email": "normaluser@gmail.de",
+    "password": "adsdfhjngegra"
+}
+
+### Facebook Auth
+GET {{adress}}/google
+
+### Facebook Auth
+GET {{adress}}/facebook
+
+### Discord Auth
+GET {{adress}}/discord
